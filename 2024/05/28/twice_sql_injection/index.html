@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yiweibu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="题目思路二次注入 用1’注册登录后无info无显示，正常注册info随意修改有显示（回显位置），因此用1’ union select database()#得到库名  接着爆表名，列名，flag 1’ union select group_concat(table_name) from information_schema.tables where table_schema&#x3D;’ctf">
+  <meta name="description" content="简单的练习no.2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="buuctf一些刷过的题(二)">
 <meta property="og:url" content="http://yiweibu.github.io/2024/05/28/twice_sql_injection/index.html">
 <meta property="og:site_name" content="Wei&#39;s blog">
-<meta property="og:description" content="题目思路二次注入 用1’注册登录后无info无显示，正常注册info随意修改有显示（回显位置），因此用1’ union select database()#得到库名  接着爆表名，列名，flag 1’ union select group_concat(table_name) from information_schema.tables where table_schema&#x3D;’ctf">
+<meta property="og:description" content="简单的练习no.2">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yiweibu.github.io/imgs/twice_sql_injection/image-20240528232421406.png">
 <meta property="og:image" content="http://yiweibu.github.io/imgs/twice_sql_injection/image-20240528232438309.png">
 <meta property="og:image" content="http://yiweibu.github.io/imgs/twice_sql_injection/image-20240528232514166.png">
 <meta property="og:image" content="http://yiweibu.github.io/imgs/twice_sql_injection/image-20240528232527028.png">
 <meta property="article:published_time" content="2024-05-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-05-28T15:27:04.480Z">
+<meta property="article:modified_time" content="2024-05-28T15:34:27.167Z">
 <meta property="article:author" content="Wei">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yiweibu.github.io/imgs/twice_sql_injection/image-20240528232421406.png">
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-05-28 00:00:00 / 修改时间：23:27:04" itemprop="dateCreated datePublished" datetime="2024-05-28T00:00:00+08:00">2024-05-28</time>
+              <time title="创建时间：2024-05-28 00:00:00 / 修改时间：23:34:27" itemprop="dateCreated datePublished" datetime="2024-05-28T00:00:00+08:00">2024-05-28</time>
             </span>
 
           
@@ -193,7 +193,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <p>简单的练习no.2</p>
+<span id="more"></span>
 
 <h1 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h1><p>二次注入</p>
 <p>用1’注册登录后无info无显示，正常注册info随意修改有显示（回显位置），因此用1’ union select database()#得到库名</p>
